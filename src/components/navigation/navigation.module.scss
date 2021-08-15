@@ -1,0 +1,11 @@
+@import "../../utilities/partials/colorCodes";
+
+.navigation {
+  $accent: $yellow-green;
+}
+
+@media (min-width: 576px) {
+  .navigation {
+    background-color: #C5E576;
+  }
+}

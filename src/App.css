@@ -75,6 +75,7 @@ video {
   background: transparent;
   font-family: 'Alata', sans-serif;
   line-height: 1.15;
+  box-sizing: border-box;
 }
 
 body {

@@ -1,0 +1,16 @@
+@import "../../../utilities/partials/colorCodes";
+@import "../../../utilities/partials/size";
+
+.toolbar {
+  background: $toolbar-background;
+  color: $black;
+  height: 64px;
+  display: flex;
+  padding: 0 $std-spacing;
+  align-items: center;
+}
+
+.title {
+  margin-top: 5px;
+  font-size: 22px;
+}
