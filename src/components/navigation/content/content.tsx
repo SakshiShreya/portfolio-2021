@@ -11,7 +11,7 @@ const Content: React.FC<ContentProps> = () => {
   const { device } = useContext(DeviceContext);
 
   return (
-    <div className={[styles.cont, device === "mobile" && isOpen ? styles.slide : null].join(" ")}>
+    <div className={[styles.cont, device === "desktop" || isOpen ? styles.slide : null].join(" ")}>
       <Routes />
     </div>
   );

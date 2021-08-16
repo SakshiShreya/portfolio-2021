@@ -13,7 +13,7 @@ const NavContainer: React.FC<NavContainerProps> = () => {
 
   return (
     <div className={styles.cont}>
-      {device === "mobile" && <div className={[styles.backdrop, isOpen ? styles.show : null].join(" ")}></div>}
+      {device !== "desktop" && <div className={[styles.backdrop, isOpen ? styles.show : null].join(" ")}></div>}
       <SideNavCont />
       <Content />
     </div>

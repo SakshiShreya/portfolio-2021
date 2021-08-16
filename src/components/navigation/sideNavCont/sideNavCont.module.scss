@@ -1,9 +1,10 @@
 @import "../../../utilities/partials/mixins";
+@import "../../../utilities/partials/colorCodes";
 
 .drawer {
   box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
   width: 200px;
-  background-color: #fff;
+  background-color: map-get($green, "light9");
   display: block;
   position: absolute;
   top: 0;
@@ -20,5 +21,10 @@
   &.show {
     visibility: visible;
     transform: translateX(0%);
+  }
+
+  @media (min-width: 992px) {
+    background-color: map-get($green, "light7");
+    box-shadow: none;
   }
 }

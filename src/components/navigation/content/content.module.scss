@@ -11,6 +11,11 @@
 
   &.slide {
     margin-left: 200px;
-    margin-right: -200px;
-  } 
+  }
+
+  @media (max-width: 991px) {
+    &.slide {
+      margin-right: -200px;
+    }
+  }
 }
