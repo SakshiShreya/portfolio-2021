@@ -1,0 +1,16 @@
+@import "../../../utilities/partials/mixins";
+
+.cont {
+  @include std-animation;
+  transition-property: margin-left, margin-right;
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  overflow: auto;
+
+  &.slide {
+    margin-left: 200px;
+    margin-right: -200px;
+  } 
+}

@@ -5,3 +5,8 @@ export interface IDimensions {
   height: number;
   device: TDevice;
 }
+
+export interface INavigation {
+  isOpen: boolean;
+  onOpen: (isOpen: boolean) => void;
+}

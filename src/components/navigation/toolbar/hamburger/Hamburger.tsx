@@ -1,17 +1,18 @@
+import { useContext } from "react";
+import { NavigationContext } from "../../../../context/navigationContext";
 import styles from "./hamburger.module.scss";
 
-export interface HamburgerProps {
-  isOpen: boolean;
-  onClick: (isOpen: boolean) => void;
-}
+export interface HamburgerProps {}
 
 const Hamburger: React.FC<HamburgerProps> = props => {
+  const { isOpen, onOpen } = useContext(NavigationContext);
+
   function handleClick() {
-    props.onClick(!props.isOpen);
+    onOpen(!isOpen);
   }
 
   return (
-    <button className={styles.hamburger + " " + (props.isOpen ? styles.open : "")} onClick={handleClick}>
+    <button className={styles.hamburger + " " + (isOpen ? styles.open : "")} onClick={handleClick}>
       <svg width="40" height="40" viewBox="0 0 100 100">
         <path
           className={styles.line + " " + styles.line1}

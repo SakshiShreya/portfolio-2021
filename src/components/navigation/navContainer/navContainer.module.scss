@@ -1,0 +1,26 @@
+@import "../../../utilities/partials/mixins";
+
+.cont {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.backdrop {
+  @include std-animation;
+  transition-property: background-color, visibility;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  z-index: 3;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
