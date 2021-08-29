@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { NavigationContext } from "../../../context/navigationContext";
-import styles from "./sideNavCont.module.scss";
+import { NavigationContext } from "../../../context/NavigationContext";
+import styles from "./SideNavCont.module.scss";
 
 export interface SideNavContProps {}
 

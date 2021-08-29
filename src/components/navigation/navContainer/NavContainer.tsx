@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { DeviceContext } from "../../../context/deviceContext";
-import { NavigationContext } from "../../../context/navigationContext";
-import Content from "../content/content";
-import SideNavCont from "../sideNavCont/sideNavCont";
-import styles from "./navContainer.module.scss";
+import { DeviceContext } from "../../../context/DeviceContext";
+import { NavigationContext } from "../../../context/NavigationContext";
+import Content from "../content/Content";
+import SideNavCont from "../sideNavCont/SideNavCont";
+import styles from "./NavContainer.module.scss";
 
 export interface NavContainerProps {}
 

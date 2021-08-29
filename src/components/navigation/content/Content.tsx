@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { DeviceContext } from "../../../context/deviceContext";
-import { NavigationContext } from "../../../context/navigationContext";
-import Routes from "../../routes";
-import styles from "./content.module.scss";
+import { DeviceContext } from "../../../context/DeviceContext";
+import { NavigationContext } from "../../../context/NavigationContext";
+import Routes from "../../Routes";
+import styles from "./Content.module.scss";
 
 export interface ContentProps {}
 

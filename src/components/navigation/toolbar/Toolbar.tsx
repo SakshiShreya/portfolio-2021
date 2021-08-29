@@ -1,5 +1,5 @@
 import Hamburger from "./hamburger/Hamburger";
-import styles from "./toolbar.module.scss";
+import styles from "./Toolbar.module.scss";
 
 export interface ToolbarProps {}
 

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import LayoutDsk from "./components/layout/layoutDsk";
+import LayoutDsk from "./components/layout/LayoutDsk";
 import LayoutMob from "./components/layout/LayoutMob";
-import { DeviceContext } from "./context/deviceContext";
-import { NavigationContext } from "./context/navigationContext";
+import { DeviceContext } from "./context/DeviceContext";
+import { NavigationContext } from "./context/NavigationContext";
 import useWindowDimensions from "./hooks/useWindowDimentions";
 
 function App() {

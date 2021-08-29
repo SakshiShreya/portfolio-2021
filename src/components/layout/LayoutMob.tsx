@@ -1,6 +1,6 @@
-import NavContainer from "../navigation/navContainer/navContainer";
+import NavContainer from "../navigation/navContainer/NavContainer";
 import Toolbar from "../navigation/toolbar/Toolbar";
-import styles from "./layout.module.scss";
+import styles from "./Layout.module.scss";
 
 export interface LayoutMobProps {}
 

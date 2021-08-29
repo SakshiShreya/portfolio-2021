@@ -1,5 +1,5 @@
-import NavContainer from "../navigation/navContainer/navContainer";
-import styles from "./layout.module.scss";
+import NavContainer from "../navigation/navContainer/NavContainer";
+import styles from "./Layout.module.scss";
 
 export interface LayoutDskProps {}
 

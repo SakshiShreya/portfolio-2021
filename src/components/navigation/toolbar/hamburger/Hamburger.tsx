@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { NavigationContext } from "../../../../context/navigationContext";
-import styles from "./hamburger.module.scss";
+import { NavigationContext } from "../../../../context/NavigationContext";
+import styles from "./Hamburger.module.scss";
 
 export interface HamburgerProps {}
 
