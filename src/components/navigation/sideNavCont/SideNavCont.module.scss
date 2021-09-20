@@ -4,7 +4,7 @@
 .drawer {
   box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
   width: 200px;
-  background-color: map-get($green, "light9");
+  background-color: map-get($orange, "light7");
   display: block;
   position: absolute;
   top: 0;
@@ -16,7 +16,7 @@
   transform: translateX(-100%);
   visibility: hidden;
   @include std-animation;
-  transition-property: transform, visibility;
+  transition-property: background-color, transform, visibility;
 
   &.show {
     visibility: visible;
@@ -24,7 +24,7 @@
   }
 
   @media (min-width: 992px) {
-    background-color: map-get($green, "light7");
+    background-color: map-get($orange, "normal");
     box-shadow: none;
   }
 }

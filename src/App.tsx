@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 import LayoutDsk from "./components/layout/LayoutDsk";
 import LayoutMob from "./components/layout/LayoutMob";
 import { DeviceContext } from "./context/DeviceContext";

@@ -1,14 +1,24 @@
 // colours picked from this palette
 // https://coolors.co/db2763-b0db43-12eaea-bce7fd-c492b1
 
+$orange: (
+  "light7": #ffd2c2,
+  "light3": #ff9670,
+  "normal": #ff6b35
+);
+
 $green: (
-  "light9": #f1f8dd,
-  "light7": #e2f2ba,
-  "light3": #c5e576,
-  "normal": #b0db43
+  "normal": #25b071
+);
+
+$gray: (
+  "light9": #ebebeb,
+  "light7": #d6d6d6,
+  "normal": #888888,
+  "dark3": #707070
 );
 
 // special scenarios
 $black: #333333;
 $white: #ffffff;
-$toolbar-background: map-get($green, "normal");
+$toolbar-background: map-get($orange, "normal");

@@ -1,3 +1,6 @@
+@import "./utilities/partials/colorCodes";
+@import "./utilities/partials/size";
+
 html,
 body,
 div,
@@ -104,14 +107,11 @@ nav ul {
 blockquote,
 q {
   quotes: none;
-}
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
+  &:before, &:after {
+    content: "";
+    content: none;
+  }
 }
 
 a {
@@ -158,4 +158,32 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 h1, .h1 {
   font-size: 2em;
+}
+
+h2, .h2 {
+  font-size: 1.5em;
+}
+
+.secondary-btn {
+  display: inline-block;
+  color: map-get($map: $green, $key: "normal");
+  border: 1px solid map-get($map: $green, $key: "normal");
+  padding: 0.25 * $std-spacing 0.5 * $std-spacing;
+  border-radius: 3px;
+  background: $white;
+  transition: background-color 100ms ease-in;
+
+  &:hover {
+    background-color: map-get($map: $gray, $key: "light9");
+  }
+  
+  &:focus {
+    background-color: map-get($map: $gray, $key: "light7");
+  }
+}
+
+@media (min-width: 576px) {
+  h2, .h2 {
+    font-size: 1.7em;
+  }
 }
