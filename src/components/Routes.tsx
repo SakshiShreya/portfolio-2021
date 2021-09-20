@@ -1,5 +1,5 @@
 import { Route, Switch } from "react-router-dom";
-import HomeScreen from "../screens/HomeScreen";
+import HomeScreen from "./screens/home/HomeScreen";
 
 export interface RoutesProps {}
 

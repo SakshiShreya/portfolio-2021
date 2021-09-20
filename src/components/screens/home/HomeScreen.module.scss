@@ -1,0 +1,22 @@
+@import "../../../utilities/partials/size";
+
+.cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: $std-spacing;
+}
+
+.head {
+  font-size: 2.5em;
+
+  @media (min-width: 576px) {
+    font-size: 3em;
+  }
+}
+
+.initials {
+  height: 40px;
+  margin-bottom: -2px;
+}
