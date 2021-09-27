@@ -17,7 +17,7 @@ const SideNavCont: React.FC<SideNavContProps> = props => {
 
   return (
     <nav className={[styles.drawer, isOpen ? styles.show : null].join(" ")}>
-      {device === "desktop" && <img src="/assets/logo/SSlogo.png" className={styles.logo} />}
+      {device === "desktop" && <img src={process.env.PUBLIC_URL + "/assets/logo/SSlogo.png"} className={styles.logo} />}
       <ul>
         {links.map(link => (
           <li className={styles.li + " h4"}>

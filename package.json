@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "set BUILD_PATH=docs&& react-scripts build",
+    "build": "set BUILD_PATH=docs&& set PUBLIC_URL=/portfolio-2021&& react-scripts build",
     "build:curr": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

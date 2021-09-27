@@ -7,7 +7,7 @@ const Toolbar: React.FC<ToolbarProps> = () => {
   return (
     <div className={styles.toolbar}>
       <Hamburger />
-      <img src="/assets/logo/SSlogo.png" height="100" className={styles.logo} />
+      <img src={process.env.PUBLIC_URL + "/assets/logo/SSlogo.png"} height="100" className={styles.logo} />
     </div>
   );
 };
