@@ -7,7 +7,7 @@ const Toolbar: React.FC<ToolbarProps> = () => {
   return (
     <div className={styles.toolbar}>
       <Hamburger />
-      <h2 className={styles.title}>Sakshi Shreya</h2>
+      <img src="/assets/logo/SSlogo.png" height="100" className={styles.logo} />
     </div>
   );
 };

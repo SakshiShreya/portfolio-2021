@@ -8,10 +8,20 @@
   display: flex;
   padding: 0 $std-spacing;
   align-items: center;
+  justify-content: space-between;
 }
 
 .title {
   margin-top: 5px;
   margin-left: $std-spacing;
   font-size: 22px;
+}
+
+.logo {
+  height: 40px;
+  background-color: white;
+  padding: 5px;
+  display: inline-block;
+  margin: $std-spacing;
+  border-radius: 3px;
 }

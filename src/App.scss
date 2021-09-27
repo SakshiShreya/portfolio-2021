@@ -164,6 +164,11 @@ h2, .h2 {
   font-size: 1.5em;
 }
 
+h4, .h4 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
 .secondary-btn {
   display: inline-block;
   color: map-get($map: $green, $key: "normal");
