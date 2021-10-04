@@ -1,0 +1,31 @@
+@import "../../../utilities/partials/size";
+@import "../../../utilities/partials/colorCodes";
+
+.cont {
+  max-width: 700px;
+  margin: 2 * $std-spacing auto;
+  padding: 0 $std-spacing;
+  box-sizing: content-box;
+}
+
+.heading {
+  margin-bottom: 2 * $std-spacing;
+}
+
+.para {
+  margin-bottom: $std-spacing;
+  text-align: justify;
+  line-height: 1.3;
+}
+
+.subHead {
+  margin-top: 1.5 * $std-spacing;
+  margin-bottom: $std-spacing;
+}
+
+.headshot {
+  width: 100%;
+  border: 3px solid map-get($map: $orange, $key: "normal");
+  padding: 2px;
+  border-radius: 10px;
+}
