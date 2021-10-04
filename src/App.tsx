@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import "./App.scss";
 import LayoutDsk from "./components/layout/LayoutDsk";
 import LayoutMob from "./components/layout/LayoutMob";
@@ -22,7 +22,7 @@ function App() {
   return (
     <DeviceContext.Provider value={dimensions}>
       <NavigationContext.Provider value={{ isOpen: isSideNavOpen, onOpen: setIsSideNavOpen }}>
-        <BrowserRouter>{device !== "desktop" ? <LayoutMob /> : <LayoutDsk />}</BrowserRouter>
+        <HashRouter>{device !== "desktop" ? <LayoutMob /> : <LayoutDsk />}</HashRouter>
       </NavigationContext.Provider>
     </DeviceContext.Provider>
   );
