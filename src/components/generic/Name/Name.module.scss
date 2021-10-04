@@ -1,0 +1,9 @@
+@import "../../../utilities/partials/colorCodes";
+
+.orange {
+  color: map-get($map: $orange, $key: "normal");
+}
+
+.green {
+  color: map-get($map: $green, $key: "normal");
+}

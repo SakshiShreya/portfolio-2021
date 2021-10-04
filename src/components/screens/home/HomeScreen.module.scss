@@ -21,14 +21,6 @@
   margin: $std-spacing 0;
 }
 
-.orange {
-  color: map-get($map: $orange, $key: "normal");
-}
-
-.green {
-  color: map-get($map: $green, $key: "normal");
-}
-
 .psText {
   color: map-get($map: $gray, $key: "dark3");
   margin-top: 2 * $std-spacing;
