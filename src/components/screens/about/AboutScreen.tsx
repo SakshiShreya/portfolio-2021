@@ -1,18 +1,27 @@
 import * as React from "react";
-import { convertArrayToString } from "../../../utilities/utils";
+import { IAboutSection } from "../../../types/portfolioSectionTypes";
+import { convertArrayToString, countNumberOfYears } from "../../../utilities/utils";
 import Name from "../../generic/Name/Name";
 import styles from "./AboutScreen.module.scss";
+import axios from "../../../utilities/axios";
 
 interface AboutScreenProps {}
 
 const AboutScreen: React.FunctionComponent<AboutScreenProps> = () => {
-  const data = {
-    position: "front-end developer (SDE-1)",
-    company: "BookMyShow",
-    location: "Bengaluru, Karnataka, India",
-    yearsExp: 3,
-    prevCompanies: ["EY-GDS", "Edelweiss Financial Services"]
-  };
+  const [data, setData] = React.useState<IAboutSection>({ position: "", company: "", location: "", prevCompanies: [] });
+
+  const yearsExp = countNumberOfYears(new Date(), new Date("11/26/2018"));
+
+  React.useEffect(() => {
+    axios
+      .get<IAboutSection>("/about")
+      .then(res => {
+        setData(res.data);
+      })
+      .catch((err: Error) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <article className={styles.cont}>
@@ -21,11 +30,11 @@ const AboutScreen: React.FunctionComponent<AboutScreenProps> = () => {
       </h1>
       {/* TODO: Get data from backend and bind here */}
       <p className={styles.para}>
-        I am a {data.position} in {data.company}. I am located in {data.location}. I have around {data.yearsExp}yrs of professional
-        experience. I love learning and trying new things. And after learning, I love to share my knowledge with the world; mentoring people
-        is one of the things that I do in my spare time.
+        I am a {data.position} in {data.company}. I am located in {data.location}. I have around {yearsExp}yrs of professional experience. I
+        love learning and trying new things. And after learning, I love to share my knowledge with the world; mentoring people is one of the
+        things that I do in my spare time.
       </p>
-      <img src={process.env.PUBLIC_URL + "/assets/images/me.png"} className={styles.headshot} />
+      <img src={process.env.PUBLIC_URL + "/assets/images/me.png"} className={styles.headshot} alt="Sakshi's Headshot" />
 
       <h2 className={styles.subHead}>Previous Experience</h2>
       <p className={styles.para}>
@@ -33,7 +42,7 @@ const AboutScreen: React.FunctionComponent<AboutScreenProps> = () => {
         non-technical knowledge from these companies.
       </p>
       {/* TODO: Add link to experience section */}
-      <p className={styles.para}>You can read more about my experience in my experiences section</p>
+      <p className={styles.para}>You can read more about my experience in my experiences section.</p>
       {/* TODO: add a timeline here just like https://jacekjeznach.com/ */}
 
       <h2 className={styles.subHead}>Hobbies</h2>
