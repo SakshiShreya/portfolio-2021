@@ -4,11 +4,13 @@ import { convertArrayToString, countNumberOfYears } from "../../../utilities/uti
 import Name from "../../generic/Name/Name";
 import styles from "./AboutScreen.module.scss";
 import axios from "../../../utilities/axios";
+import Loader from "../../generic/Loader/Loader";
 
 interface AboutScreenProps {}
 
 const AboutScreen: React.FunctionComponent<AboutScreenProps> = () => {
   const [data, setData] = React.useState<IAboutSection>({ position: "", company: "", location: "", prevCompanies: [] });
+  const [isLoading, setIsLoading] = React.useState(true);
 
   const yearsExp = countNumberOfYears(new Date(), new Date("11/26/2018"));
 
@@ -17,13 +19,21 @@ const AboutScreen: React.FunctionComponent<AboutScreenProps> = () => {
       .get<IAboutSection>("/about")
       .then(res => {
         setData(res.data);
+        setIsLoading(false);
       })
       .catch((err: Error) => {
         console.log(err);
+        setIsLoading(false);
       });
   }, []);
 
-  return (
+  return isLoading ? (
+    <div className={styles.cont}>
+      <div className={styles.center}>
+        <Loader size={200} />
+      </div>
+    </div>
+  ) : (
     <article className={styles.cont}>
       <h1 className={styles.heading}>
         <Name />
