@@ -5,62 +5,81 @@ import Name from "../../generic/Name/Name";
 import styles from "./AboutScreen.module.scss";
 import axios from "../../../utilities/axios";
 import Loader from "../../generic/Loader/Loader";
+import SomethingWentWrong from "../../generic/SomethingWentWrong/SomethingWentWrong";
+import { AxiosError } from "axios";
+import { IErrorJSON, IErrorType } from "../../../types/genericTypes";
 
 interface AboutScreenProps {}
 
 const AboutScreen: React.FunctionComponent<AboutScreenProps> = () => {
-  const [data, setData] = React.useState<IAboutSection>({ position: "", company: "", location: "", prevCompanies: [] });
+  const [data, setData] = React.useState<IAboutSection | null>(null);
   const [isLoading, setIsLoading] = React.useState(true);
+  const [error, setError] = React.useState<IErrorType | null>(null);
 
-  const yearsExp = countNumberOfYears(new Date(), new Date("11/26/2018"));
+  const yearsExp = countNumberOfYears(new Date(), new Date("26 Nov, 2018"));
 
   React.useEffect(() => {
+    callApi();
+  }, []);
+
+  function callApi() {
     axios
       .get<IAboutSection>("/about")
       .then(res => {
         setData(res.data);
         setIsLoading(false);
+        setError(null);
       })
-      .catch((err: Error) => {
-        console.log(err);
+      .catch((err: AxiosError) => {
+        setData(null);
         setIsLoading(false);
+
+        if ((err.toJSON() as IErrorJSON).status === null) {
+          setError({ msg: "Not able to fetch data properly. Could you please try again.", reload: true });
+        } else {
+          setError({ msg: err.message, reload: true });
+        }
       });
-  }, []);
+  }
 
   return isLoading ? (
-    <div className={styles.cont}>
-      <div className={styles.center}>
-        <Loader size={200} />
-      </div>
+    <div className={[styles.cont, styles.center].join(" ")}>
+      <Loader size={200} />
     </div>
+  ) : error ? (
+    <SomethingWentWrong reload={error.reload} reloadFn={callApi}>
+      <p>{error.msg}</p>
+    </SomethingWentWrong>
   ) : (
-    <article className={styles.cont}>
-      <h1 className={styles.heading}>
-        <Name />
-      </h1>
-      {/* TODO: Get data from backend and bind here */}
-      <p className={styles.para}>
-        I am a {data.position} in {data.company}. I am located in {data.location}. I have around {yearsExp}yrs of professional experience. I
-        love learning and trying new things. And after learning, I love to share my knowledge with the world; mentoring people is one of the
-        things that I do in my spare time.
-      </p>
-      <img src={process.env.PUBLIC_URL + "/assets/images/me.png"} className={styles.headshot} alt="Sakshi's Headshot" />
+    data && (
+      <article className={styles.cont}>
+        <h1 className={styles.heading}>
+          <Name />
+        </h1>
 
-      <h2 className={styles.subHead}>Previous Experience</h2>
-      <p className={styles.para}>
-        Before {data.company}, I have worked in {convertArrayToString(data.prevCompanies)}. I have gained lots of technical and
-        non-technical knowledge from these companies.
-      </p>
-      {/* TODO: Add link to experience section */}
-      <p className={styles.para}>You can read more about my experience in my experiences section.</p>
-      {/* TODO: add a timeline here just like https://jacekjeznach.com/ */}
+        <p className={styles.para}>
+          I am a {data.position} in {data.company}. I am located in {data.location}. I have around {yearsExp}yrs of professional experience.
+          I love learning and trying new things. And after learning, I love to share my knowledge with the world; mentoring people is one of
+          the things that I do in my spare time.
+        </p>
+        <img src={process.env.PUBLIC_URL + "/assets/images/me.png"} className={styles.headshot} alt="Sakshi's Headshot" />
 
-      <h2 className={styles.subHead}>Hobbies</h2>
-      <p className={styles.para}>
-        In my free time, I like to draw, sketch, sing, read, mentor, write blogs, learn something new... <span title="tired">🥱</span>
-        <br />I have lots of those hobbies. So many, that even I forget sometimes. <span title="mock">😜</span>
-      </p>
-    </article>
+        <h2 className={styles.subHead}>Previous Experience</h2>
+        <p className={styles.para}>
+          Before {data.company}, I have worked in {convertArrayToString(data.prevCompanies)}. I have gained lots of technical and
+          non-technical knowledge from these companies.
+        </p>
+        {/* TODO: Add link to experience section */}
+        <p className={styles.para}>You can read more about my experience in my experiences section.</p>
+        {/* TODO: add a timeline here just like https://jacekjeznach.com/ */}
+
+        <h2 className={styles.subHead}>Hobbies</h2>
+        <p className={styles.para}>
+          In my free time, I like to draw, sketch, sing, read, mentor, write blogs, learn something new... <span title="tired">🥱</span>
+          <br />I have lots of those hobbies. So many, that even I forget sometimes. <span title="mock">😜</span>
+        </p>
+      </article>
+    )
   );
 };
 

@@ -1,0 +1,21 @@
+@import "../../../utilities/partials/size";
+
+.cont {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.content {
+  margin-top: $std-spacing;
+}
+
+.ctas {
+  margin-top: 3 * $std-spacing;
+}
+
+.reload {
+  margin-right: 2 * $std-spacing;
+}

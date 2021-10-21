@@ -6,7 +6,6 @@ interface LoaderProps {
 }
 
 const Loader: FunctionComponent<LoaderProps> = props => {
-  console.log(styles);
   return (
     <div className={`${styles.loader} ${styles["loader_" + props.size]}`}>
       <div className={styles.box}></div>
