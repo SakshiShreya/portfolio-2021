@@ -2,10 +2,17 @@
 @import "../../../utilities/partials/colorCodes";
 
 .cont {
+  $margin-vert: 2 * $std-spacing;
   max-width: 700px;
-  margin: 2 * $std-spacing auto;
+  margin:$margin-vert auto;
   padding: 0 $std-spacing;
   box-sizing: content-box;
+  min-height: calc(100% - #{2 * $margin-vert});
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }
 
 .heading {
