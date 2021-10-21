@@ -1,5 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FunctionComponent } from "react";
 import styles from "./SomethingWentWrong.module.scss";
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
 interface SomethingWentWrongProps {
   title?: string;
@@ -10,7 +12,7 @@ interface SomethingWentWrongProps {
 const SomethingWentWrong: FunctionComponent<SomethingWentWrongProps> = props => {
   return (
     <section className={styles.cont}>
-      <i className="fa fa-exclamation-circle" aria-hidden="true"></i>
+      <FontAwesomeIcon icon={faExclamationCircle} size="5x" className={styles.icon} />
       <h1>{props.title || "Oops! Something went wrong"}</h1>
       {props.children && <div className={styles.content}>{props.children}</div>}
       <div className={styles.ctas}>
@@ -20,9 +22,7 @@ const SomethingWentWrong: FunctionComponent<SomethingWentWrongProps> = props => 
           </button>
         )}
         {/* TODO: Take to the contacts page */}
-        <button className={"btn primary medium fill"}>
-          Give Feedback
-        </button>
+        <button className={"btn primary medium fill"}>Give Feedback</button>
       </div>
     </section>
   );
