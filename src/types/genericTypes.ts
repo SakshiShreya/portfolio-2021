@@ -13,6 +13,21 @@ export interface INavigation {
   onOpen: (isOpen: boolean) => void;
 }
 
+export interface IResponse<T> {
+  data: T
+}
+
+export interface IError {
+  status: 'fail' | 'error',
+  message: string;
+  stack?: string;
+  error: {
+    isOperational: boolean;
+    status: 'fail';
+    statusCode: number;
+  }
+}
+
 export interface IErrorJSON {
   code: undefined;
   columnNumber: undefined;

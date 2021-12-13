@@ -7,9 +7,11 @@ import axios from "../../../utilities/axios";
 import Loader from "../../generic/Loader/Loader";
 import SomethingWentWrong from "../../generic/SomethingWentWrong/SomethingWentWrong";
 import { AxiosError } from "axios";
-import { IErrorJSON, IErrorType } from "../../../types/genericTypes";
+import { IError, IErrorJSON, IErrorType, IResponse } from "../../../types/genericTypes";
 
 interface AboutScreenProps {}
+
+type TAbout = IResponse<IAboutSection>;
 
 const AboutScreen: React.FunctionComponent<AboutScreenProps> = () => {
   const [data, setData] = React.useState<IAboutSection | null>(null);
@@ -23,18 +25,22 @@ const AboutScreen: React.FunctionComponent<AboutScreenProps> = () => {
   }, []);
 
   function callApi() {
+    setIsLoading(true);
+  
     axios
-      .get<IAboutSection>("/about")
+      .get<TAbout>("/v1/about")
       .then(res => {
-        setData(res.data);
+        setData(res.data.data);
         setIsLoading(false);
         setError(null);
       })
-      .catch((err: AxiosError) => {
+      .catch((err: AxiosError<IError>) => {
         setData(null);
         setIsLoading(false);
 
-        if ((err.toJSON() as IErrorJSON).status === null) {
+        if (err.response?.data?.message) {
+          setError({ msg: err.response.data.message, reload: true })
+        } else if ((err.toJSON() as IErrorJSON).status === null) {
           setError({ msg: "Not able to fetch data properly. Could you please try again.", reload: true });
         } else {
           setError({ msg: err.message, reload: true });

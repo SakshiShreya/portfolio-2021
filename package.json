@@ -23,8 +23,9 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "local": "set REACT_APP_ENV=local&& react-scripts start",
     "start": "react-scripts start",
-    "build": "set BUILD_PATH=docs&& react-scripts build",
+    "build": "set BUILD_PATH=docs&& set GENERATE_SOURCEMAP=false&& react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
