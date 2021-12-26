@@ -1,0 +1,24 @@
+@import "../../../utilities/partials/size";
+@import "../../../utilities/partials/colorCodes";
+
+.pill {
+  padding: ($std-spacing / 4) $std-spacing;
+  border-radius: 50px;
+  color: $white;
+  font-size: 12px;
+  display: inline-block;
+  margin-right: $std-spacing / 2;
+  margin-bottom: $std-spacing / 4;
+}
+
+.primary {
+  background-color: map-get($map: $orange, $key: normal);
+}
+
+.secondary {
+  background-color: map-get($map: $green, $key: normal);
+}
+
+.gray {
+  background-color: map-get($map: $gray, $key: normal);
+}

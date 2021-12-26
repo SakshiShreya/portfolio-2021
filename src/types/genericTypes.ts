@@ -46,3 +46,9 @@ export interface IErrorType {
   reload: boolean;
   msg: string;
 }
+
+export interface IDuration {
+  years: number;
+  months: number;
+  days: number;
+}

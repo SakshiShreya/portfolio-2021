@@ -170,18 +170,44 @@ h6,
 
 h1,
 .h1 {
-  font-size: 2em;
+  font-size: 28px;
+
+  @media (min-width: 576px) {
+    font-size: 32px;
+  }
 }
 
 h2,
 .h2 {
-  font-size: 1.5em;
+  font-size: 24px;
+
+  @media (min-width: 576px) {
+    font-size: 28px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 20px;
+
+  @media (min-width: 576px) {
+    font-size: 24px;
+  }
 }
 
 h4,
 .h4 {
-  font-size: 1em;
+  font-size: 16px;
   font-weight: bold;
+}
+
+p,
+.p {
+  font-size: 14px;
+
+  @media (min-width: 576px) {
+    font-size: 16px;
+  }
 }
 
 .btn {
@@ -213,7 +239,7 @@ h4,
       &:hover {
         background-color: map-get($map: $color, $key: "dark2");
       }
-  
+
       &:focus {
         background-color: map-get($map: $color, $key: "dark4");
       }
@@ -243,9 +269,20 @@ h4,
   }
 }
 
-@media (min-width: 576px) {
-  h2,
-  .h2 {
-    font-size: 1.7em;
+.cont {
+  $margin-vert: 2 * $std-spacing;
+  max-width: 700px;
+  margin: $margin-vert auto;
+  padding: 0 $std-spacing;
+  box-sizing: content-box;
+  min-height: calc(100% - #{2 * $margin-vert});
+
+  &.center {
+    display: flex;
+    justify-content: center;
   }
+}
+
+.heading {
+  margin-bottom: 2 * $std-spacing;
 }
