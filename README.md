@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+![CI/CD](https://github.com/sakshishreya/portfolio-2022/workflows/BuildProject/badge.svg)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
