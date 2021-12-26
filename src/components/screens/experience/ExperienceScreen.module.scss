@@ -1,0 +1,154 @@
+@import "../../../utilities/partials/size";
+@import "../../../utilities/partials/colorCodes";
+
+$card: map-get(
+  $map: $orange,
+  $key: normal
+);
+$line: map-get(
+  $map: $green,
+  $key: normal
+);
+$circle-size: 40px;
+
+.wrapper {
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background: $line;
+  left: 20px;
+  top: 20px;
+  transform: translateX(-50%);
+}
+
+.icon {
+  background: $white;
+  border-radius: 50%;
+  font-size: 17px;
+  height: $circle-size;
+  margin-right: $std-spacing / 2;
+  position: static;
+  text-align: center;
+  width: $circle-size;
+
+  @media (min-width: 576px) {
+    box-shadow: 0 0 0 2px $line;
+    margin: 0;
+    position: absolute;
+  }
+}
+
+.logo {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.scrollIcon {
+  bottom: 0;
+  left: 50%;
+  font-size: 25px;
+  line-height: $circle-size;
+  transform: translateX(-50%);
+}
+
+.row {
+  margin: $std-spacing 0;
+
+  @media (min-width: 576px) {
+    margin-left: 60px;
+  }
+
+  section {
+    box-shadow: inset 0 0 0 2px $card;
+    background: $white;
+    border-radius: 5px;
+    position: relative;
+
+    @media (min-width: 576px) {
+      &::before {
+        content: "";
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        background: $card;
+        top: 28px;
+        left: -7px;
+        z-index: -1;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .icon {
+    top: 15px;
+    left: -60px;
+  }
+}
+
+.header {
+  padding: $std-spacing $std-spacing ($std-spacing / 2);
+  border-bottom: 2px solid $card;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  align-items: center;
+
+  @media (min-width: 576px) {
+    h2 {
+      display: inline-block;
+    }
+  }
+}
+
+.content {
+  padding: $std-spacing;
+}
+
+.duration {
+  @media (min-width: 576px) {
+    margin-left: $std-spacing;
+    display: inline-block;
+  }
+}
+
+.designationAndDates {
+  list-style-type: none;
+  margin-bottom: $std-spacing;
+}
+
+.designation {
+  margin-bottom: $std-spacing / 4;
+
+  span {
+    display: block;
+
+    @media (min-width: 576px) {
+      display: inline-block;
+    }
+  }
+}
+
+.desgntn {
+  margin-right: $std-spacing;
+}
+
+.date {
+  font-weight: 400;
+  color: map-get($map: $gray, $key: normal);
+}
+
+.descCont {
+  padding-inline-start: $std-spacing + 4px;
+}
+
+.desc {
+  margin-bottom: $std-spacing / 3;
+}
+
+.pills {
+  margin-top: $std-spacing;
+}

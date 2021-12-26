@@ -1,24 +1,6 @@
 @import "../../../utilities/partials/size";
 @import "../../../utilities/partials/colorCodes";
 
-.cont {
-  $margin-vert: 2 * $std-spacing;
-  max-width: 700px;
-  margin:$margin-vert auto;
-  padding: 0 $std-spacing;
-  box-sizing: content-box;
-  min-height: calc(100% - #{2 * $margin-vert});
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-}
-
-.heading {
-  margin-bottom: 2 * $std-spacing;
-}
-
 .para {
   margin-bottom: $std-spacing;
   text-align: justify;
