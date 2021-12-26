@@ -10,10 +10,10 @@
 }
 
 .head {
-  font-size: 2.5em;
+  font-size: 40px;
 
   @media (min-width: 576px) {
-    font-size: 3em;
+    font-size: 48px;
   }
 }
 
@@ -24,7 +24,7 @@
 .psText {
   color: map-get($map: $gray, $key: "dark3");
   margin-top: 2 * $std-spacing;
-  line-height: 1.2em;
+  line-height: 19px;
   max-width: 500px;
 }
 

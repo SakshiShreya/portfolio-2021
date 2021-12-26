@@ -7,7 +7,9 @@ import axios from "../../../utilities/axios";
 import Loader from "../../generic/Loader/Loader";
 import SomethingWentWrong from "../../generic/SomethingWentWrong/SomethingWentWrong";
 import { AxiosError } from "axios";
-import { IError, IErrorJSON, IErrorType, IResponse } from "../../../types/genericTypes";
+import { IError, IErrorType, IResponse } from "../../../types/genericTypes";
+import handleError from "../../../utilities/handleError";
+import { Link } from "react-router-dom";
 
 interface AboutScreenProps {}
 
@@ -26,7 +28,7 @@ const AboutScreen: React.FunctionComponent<AboutScreenProps> = () => {
 
   function callApi() {
     setIsLoading(true);
-  
+
     axios
       .get<TAbout>("/v1/about")
       .then(res => {
@@ -37,19 +39,12 @@ const AboutScreen: React.FunctionComponent<AboutScreenProps> = () => {
       .catch((err: AxiosError<IError>) => {
         setData(null);
         setIsLoading(false);
-
-        if (err.response?.data?.message) {
-          setError({ msg: err.response.data.message, reload: true })
-        } else if ((err.toJSON() as IErrorJSON).status === null) {
-          setError({ msg: "Not able to fetch data properly. Could you please try again.", reload: true });
-        } else {
-          setError({ msg: err.message, reload: true });
-        }
+        handleError(err, setError);
       });
   }
 
   return isLoading ? (
-    <div className={[styles.cont, styles.center].join(" ")}>
+    <div className="cont center">
       <Loader size={200} />
     </div>
   ) : error ? (
@@ -58,8 +53,8 @@ const AboutScreen: React.FunctionComponent<AboutScreenProps> = () => {
     </SomethingWentWrong>
   ) : (
     data && (
-      <article className={styles.cont}>
-        <h1 className={styles.heading}>
+      <article className="cont">
+        <h1 className="heading">
           <Name />
         </h1>
 
@@ -75,8 +70,8 @@ const AboutScreen: React.FunctionComponent<AboutScreenProps> = () => {
           Before {data.company}, I have worked in {convertArrayToString(data.prevCompanies)}. I have gained lots of technical and
           non-technical knowledge from these companies.
         </p>
-        {/* TODO: Add link to experience section */}
-        <p className={styles.para}>You can read more about my experience in my experiences section.</p>
+
+        <p className={styles.para}>You can read more about my experience in my <Link to="experience">experiences section</Link>.</p>
         {/* TODO: add a timeline here just like https://jacekjeznach.com/ */}
 
         <h2 className={styles.subHead}>Hobbies</h2>
