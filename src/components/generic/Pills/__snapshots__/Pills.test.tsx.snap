@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot testing of Pills Component should render empty pill block if no pill 1`] = `<ul />`;
+
+exports[`snapshot testing of Pills Component should render multiple pills 1`] = `
+<ul>
+  <li
+    className="pill primary"
+  >
+    Test1
+  </li>
+  <li
+    className="pill primary"
+  >
+    Test2
+  </li>
+</ul>
+`;
+
+exports[`snapshot testing of Pills Component should render single pill 1`] = `
+<ul>
+  <li
+    className="pill primary"
+  >
+    Test1
+  </li>
+</ul>
+`;

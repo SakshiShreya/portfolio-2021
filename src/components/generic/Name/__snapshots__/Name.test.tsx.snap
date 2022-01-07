@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Name 1`] = `
+Array [
+  <span
+    className="green"
+  >
+    S
+  </span>,
+  "akshi ",
+  <span
+    className="orange"
+  >
+    S
+  </span>,
+  "hreya",
+]
+`;
