@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import axios from 'axios';
+
+const local = "http://localhost:5000/api";
+const dev = "https://portfolio-mw-sakshi.herokuapp.com/api";
+const prod = "https://portfolio-mw-sakshi.herokuapp.com/api";
+
+axios.defaults.baseURL = process.env.REACT_APP_ENV === "local" ? local : process.env.NODE_ENV === "production" ? prod : dev;
 
 ReactDOM.render(
   <React.StrictMode>

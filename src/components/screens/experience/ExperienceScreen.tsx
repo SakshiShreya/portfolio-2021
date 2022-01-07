@@ -6,7 +6,7 @@ import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import { DeviceContext } from "../../../context/DeviceContext";
 import { IError, IErrorType, IResponse } from "../../../types/genericTypes";
 import { IExperienceRaw, IExperience } from "../../../types/portfolioSectionTypes";
-import axios from "../../../utilities/axios";
+import axios from "axios";
 import { AxiosError } from "axios";
 import handleError from "../../../utilities/handleError";
 import Loader from "../../generic/Loader/Loader";

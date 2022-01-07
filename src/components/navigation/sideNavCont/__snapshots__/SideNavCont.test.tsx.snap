@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SideNavCont properly 1`] = `
+<nav
+  className="drawer "
+>
+  <img
+    alt="Logo"
+    className="logo"
+    src="/assets/logo/SSlogo.png"
+  />
+  <ul>
+    <li
+      className="li h4"
+    >
+      <a
+        href="#/"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+    </li>
+    <li
+      className="li h4"
+    >
+      <a
+        href="#/about"
+        onClick={[Function]}
+      >
+        About Me
+      </a>
+    </li>
+    <li
+      className="li h4"
+    >
+      <a
+        href="#/experience"
+        onClick={[Function]}
+      >
+        Experience
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
