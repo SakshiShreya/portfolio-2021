@@ -20,12 +20,15 @@ exports[`should render content properly 1`] = `
         I am 
         <span
           className="green"
+          data-testid="green"
         >
           S
         </span>
-        akshi 
+        akshi
+         
         <span
           className="orange"
+          data-testid="orange"
         >
           S
         </span>
