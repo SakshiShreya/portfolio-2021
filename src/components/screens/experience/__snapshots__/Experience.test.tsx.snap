@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render loader in ExperienceScreen if no data is passed 1`] = `
+<div
+  className="cont center"
+>
+  <div
+    className="loader loader_200"
+  >
+    <div
+      className="box"
+    />
+    <div
+      className="box"
+    />
+    <div
+      className="box"
+    />
+    <div
+      className="box"
+    />
+    <div
+      className="box"
+    />
+  </div>
+</div>
+`;

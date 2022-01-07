@@ -3,7 +3,7 @@ import { IAboutSection } from "../../../types/portfolioSectionTypes";
 import { convertArrayToString, countNumberOfYears } from "../../../utilities/utils";
 import Name from "../../generic/Name/Name";
 import styles from "./AboutScreen.module.scss";
-import axios from "../../../utilities/axios";
+import axios from "axios";
 import Loader from "../../generic/Loader/Loader";
 import SomethingWentWrong from "../../generic/SomethingWentWrong/SomethingWentWrong";
 import { AxiosError } from "axios";
