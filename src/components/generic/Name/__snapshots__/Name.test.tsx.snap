@@ -4,12 +4,15 @@ exports[`should render Name 1`] = `
 Array [
   <span
     className="green"
+    data-testid="green"
   >
     S
   </span>,
-  "akshi ",
+  "akshi",
+  " ",
   <span
     className="orange"
+    data-testid="orange"
   >
     S
   </span>,

@@ -67,12 +67,15 @@ exports[`should render Desktop layout properly 1`] = `
             I am 
             <span
               className="green"
+              data-testid="green"
             >
               S
             </span>
-            akshi 
+            akshi
+             
             <span
               className="orange"
+              data-testid="orange"
             >
               S
             </span>
@@ -208,12 +211,15 @@ exports[`should render Mobile layout properly 1`] = `
             I am 
             <span
               className="green"
+              data-testid="green"
             >
               S
             </span>
-            akshi 
+            akshi
+             
             <span
               className="orange"
+              data-testid="orange"
             >
               S
             </span>

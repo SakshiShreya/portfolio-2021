@@ -6,7 +6,14 @@ interface NameProps {}
 const Name: React.FunctionComponent<NameProps> = () => {
   return (
     <>
-      <span className={styles.green}>S</span>akshi <span className={styles.orange}>S</span>hreya
+      <span data-testid="green" className={styles.green}>
+        S
+      </span>
+      akshi{" "}
+      <span data-testid="orange" className={styles.orange}>
+        S
+      </span>
+      hreya
     </>
   );
 };
