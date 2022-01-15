@@ -136,21 +136,21 @@ describe("test stringifyDuration function", () => {
     expect(stringifyDuration(second)).toContain("yrs");
   });
 
-  test("if years is 0, then months and days should be returned", () => {
+  test("if years are 0, then months and days should be returned", () => {
     const dur = stringifyDuration({ years: 0, months: 3, days: 4 });
     expect(dur).not.toContain("yr");
     expect(dur).toContain("mos");
     expect(dur).toContain("days");
   })
 
-  test("if months is 0, then years and days should be returned", () => {
+  test("if months are 0, then years and days should be returned", () => {
     const dur = stringifyDuration({ years: 2, months: 0, days: 4 });
     expect(dur).not.toContain("mo");
     expect(dur).toContain("yrs");
     expect(dur).toContain("days");
   })
 
-  test("if dayss is 0, then years and months should be returned", () => {
+  test("if days are 0, then years and months should be returned", () => {
     const dur = stringifyDuration({ years: 2, months: 3, days: 0 });
     expect(dur).not.toContain("day");
     expect(dur).toContain("yrs");
