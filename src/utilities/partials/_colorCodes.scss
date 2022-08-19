@@ -1,5 +1,5 @@
 // colours picked from this palette
-// https://coolors.co/db2763-b0db43-12eaea-bce7fd-c492b1
+// https://coolors.co/ff6b35-25b071-888888
 
 $orange: (
   "light7": #ffd2c2,
@@ -31,6 +31,7 @@ $green: (
 $gray: (
   "light9": #ebebeb,
   "light7": #d6d6d6,
+  "light4": #b8b8b8,
   "normal": #888888,
   "dark3": #707070
 );
@@ -38,4 +39,5 @@ $gray: (
 // special scenarios
 $black: #333333;
 $white: #ffffff;
+$error: #d8000c;
 $toolbar-background: map-get($orange, "normal");

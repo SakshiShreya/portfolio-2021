@@ -1,0 +1,77 @@
+@import "../../../utilities/partials/size";
+@import "../../../utilities/partials/colorCodes";
+
+.stars {
+  display: block;
+  text-align: center;
+}
+
+.subHead {
+  margin-top: 1.5 * $std-spacing;
+  margin-bottom: $std-spacing;
+}
+
+.form {
+  margin-bottom: 2 * $std-spacing;
+}
+
+.submit {
+  width: 100%;
+  margin-top: $std-spacing;
+}
+
+.icons {
+  text-align: center;
+  padding: 0;
+  list-style: none;
+  $icon-width: 50px;
+  $timing: 265ms;
+
+  li {
+    display: inline-block;
+    margin: 0 $std-spacing;
+    position: relative;
+
+    a {
+      font-size: $icon-width / 2;
+      display: inline-block;
+
+      &::before {
+        content: "";
+        transform: scale(1);
+        width: $icon-width;
+        height: $icon-width;
+        border-radius: 100%;
+        display: block;
+        background: map-get($map: $green, $key: normal);
+        transition: all ease-out $timing;
+      }
+
+      &:hover {
+        &::before {
+          transform: scale(0);
+          transition: all ease-out $timing;
+        }
+
+        svg.icon {
+          transform: scale(2);
+          color: map-get($map: $green, $key: normal);
+        }
+      }
+    }
+  }
+
+  svg.icon {
+    display: block;
+    width: $icon-width;
+    color: $white;
+    position: absolute;
+    top: $icon-width / 4;
+    text-align: center;
+    transition: all $timing ease-out;
+  }
+}
+
+.userFeedback {
+  color: map-get($map: $green, $key: normal);
+}

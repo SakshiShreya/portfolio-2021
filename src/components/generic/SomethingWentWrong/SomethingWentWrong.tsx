@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FunctionComponent } from "react";
 import styles from "./SomethingWentWrong.module.scss";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 interface SomethingWentWrongProps {
   title?: string;
@@ -21,8 +22,7 @@ const SomethingWentWrong: FunctionComponent<SomethingWentWrongProps> = props => 
             Reload
           </button>
         )}
-        {/* TODO: Take to the contacts page */}
-        <button className={"btn primary medium fill"}>Give Feedback</button>
+        <Link to="contact" className={"btn primary medium fill"}>Give Feedback</Link>
       </div>
     </section>
   );
