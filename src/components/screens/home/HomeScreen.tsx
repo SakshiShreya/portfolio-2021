@@ -18,8 +18,7 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
         <p className={styles.psText}>
           I can develop responsive and pixel-perfect websites. I love what I do. I can mentor you to be the same.
         </p>
-        {/* TODO: Take to the contacts page */}
-        <Link to="." className={"btn secondary small border " + styles.help}>
+        <Link to="contact" className={"btn secondary small border " + styles.help}>
           How can I help you?
         </Link>
       </div>

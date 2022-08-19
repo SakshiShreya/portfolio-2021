@@ -2,14 +2,14 @@ import { render } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import Pills, { IPill } from "./Pills";
 
-describe("snapshot testing of Pills Component", () => {
-  const empty: Array<IPill> = [];
+const empty: Array<IPill> = [];
   const single: Array<IPill> = [{ display: "Test1", id: "test1" }];
   const multiple: Array<IPill> = [
     { display: "Test1", id: "test1" },
     { display: "Test2", id: "test2" }
   ];
 
+describe("test Pills length", () => {
   it("should render empty pill block if no pill", () => {
     const elem = renderer.create(<Pills list={empty} />).toJSON();
     expect(elem).toMatchSnapshot();
@@ -32,7 +32,9 @@ describe("snapshot testing of Pills Component", () => {
     const instance = elem.root;
     expect(instance.findAllByProps({ className: "pill primary" })).toHaveLength(multiple.length);
   });
+});
 
+describe("test Pills color", () => {
   it("should render secondary class if color='secondary' is passed", () => {
     const elem = render(<Pills list={multiple} color="secondary" />).container;
     const children = elem.querySelectorAll("li");

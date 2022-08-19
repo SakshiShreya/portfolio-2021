@@ -27,11 +27,13 @@ exports[`snapshot testing of SomethingWentWrong Component should render Somethin
   <div
     className="ctas"
   >
-    <button
+    <a
       className="btn primary medium fill"
+      href="#/contact"
+      onClick={[Function]}
     >
       Give Feedback
-    </button>
+    </a>
   </div>
 </section>
 `;
@@ -63,11 +65,13 @@ exports[`snapshot testing of SomethingWentWrong Component should render dynamic 
   <div
     className="ctas"
   >
-    <button
+    <a
       className="btn primary medium fill"
+      href="#/contact"
+      onClick={[Function]}
     >
       Give Feedback
-    </button>
+    </a>
   </div>
 </section>
 `;
@@ -105,11 +109,13 @@ exports[`snapshot testing of SomethingWentWrong Component should render properly
     >
       Reload
     </button>
-    <button
+    <a
       className="btn primary medium fill"
+      href="#/contact"
+      onClick={[Function]}
     >
       Give Feedback
-    </button>
+    </a>
   </div>
 </section>
 `;

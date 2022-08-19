@@ -40,6 +40,16 @@ exports[`should render SideNavCont properly 1`] = `
         Experience
       </a>
     </li>
+    <li
+      className="li h4"
+    >
+      <a
+        href="#/contact"
+        onClick={[Function]}
+      >
+        Contact me
+      </a>
+    </li>
   </ul>
 </nav>
 `;

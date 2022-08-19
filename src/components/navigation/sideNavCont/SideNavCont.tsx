@@ -7,7 +7,8 @@ import styles from "./SideNavCont.module.scss";
 const links = [
   { title: "Home", link: "/" },
   { title: "About Me", link: "/about" },
-  { title: "Experience", link: "/experience" }
+  { title: "Experience", link: "/experience" },
+  { title: "Contact me", link: "/contact" }
 ];
 
 export interface SideNavContProps {}

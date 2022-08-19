@@ -46,6 +46,16 @@ exports[`should render default screen 1`] = `
             Experience
           </a>
         </li>
+        <li
+          className="li h4"
+        >
+          <a
+            href="#/contact"
+            onClick={[Function]}
+          >
+            Contact me
+          </a>
+        </li>
       </ul>
     </nav>
     <div
@@ -99,7 +109,7 @@ exports[`should render default screen 1`] = `
           </p>
           <a
             className="btn secondary small border help"
-            href="#/"
+            href="#/contact"
             onClick={[Function]}
           >
             How can I help you?

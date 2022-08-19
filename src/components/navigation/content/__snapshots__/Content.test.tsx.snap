@@ -52,7 +52,7 @@ exports[`should render content properly 1`] = `
       </p>
       <a
         className="btn secondary small border help"
-        href="#/"
+        href="#/contact"
         onClick={[Function]}
       >
         How can I help you?

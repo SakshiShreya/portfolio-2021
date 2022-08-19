@@ -70,7 +70,9 @@ time,
 mark,
 audio,
 video,
-button {
+button,
+input,
+textarea {
   margin: 0;
   padding: 0;
   border: 0;
@@ -212,7 +214,7 @@ p,
 
 .btn {
   display: inline-block;
-  border-radius: 3px;
+  border-radius: $border-radius;
   transition: background-color 100ms ease-in;
 
   &.fill {
@@ -267,6 +269,12 @@ p,
     padding: 0.5 * $std-spacing 0.75 * $std-spacing;
     font-weight: bold;
   }
+
+  &.large {
+    padding: 0.75 * $std-spacing $std-spacing;
+    font-size: 16px;
+    font-weight: bold;
+  }
 }
 
 .cont {
@@ -285,4 +293,9 @@ p,
 
 .heading {
   margin-bottom: 2 * $std-spacing;
+}
+
+.para {
+  margin-bottom: $std-spacing;
+  line-height: 1.3;
 }

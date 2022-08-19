@@ -3,6 +3,7 @@ import { IError, IErrorJSON, IErrorType } from "../types/genericTypes";
 
 type TSetError = (value: React.SetStateAction<IErrorType | null>) => void;
 
+// TODO: add test cases
 export default function handleError(err: AxiosError<IError>, setError: TSetError) {
   if (err.response?.data?.message) {
     setError({ msg: err.response.data.message, reload: true });
