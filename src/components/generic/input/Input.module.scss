@@ -1,0 +1,63 @@
+@import "../../../utilities/partials/size";
+@import "../../../utilities/partials/colorCodes";
+@import "../../../utilities/partials/mixins";
+
+$input-size: 18px;
+$small-label-size: 12px;
+$top-padding: $std-spacing / 2;
+$border-size: 2px;
+$input-padding: $std-spacing/2;
+
+.group {
+  position: relative;
+  padding: $top-padding 0 0;
+  margin-top: $std-spacing/2;
+}
+
+.field {
+  font-family: inherit;
+  width: 100%;
+  border: $border-size solid map-get($map: $gray, $key: "light4");
+  border-radius: $border-radius;
+  padding: $input-padding;
+  transition-property: border;
+  @include std-animation;
+  font-size: $input-size;
+  outline: 0;
+
+  &.textarea {
+    resize: vertical;
+    min-height: ($border-size + $input-padding) * 2 + $input-size * 1.15;
+  }
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .label {
+    font-size: $input-size;
+    cursor: text;
+    top: $top-padding + $border-size + $input-padding;
+  }
+
+  &:focus {
+    border: $border-size solid map-get($map: $green, $key: "normal");
+    ~ .label {
+      top: 0;
+      font-size: $small-label-size;
+      color: map-get($map: $green, $key: "normal");
+    }
+  }
+}
+
+.label {
+  position: absolute;
+  left: $border-size + $input-padding;
+  top: 0;
+  @include std-animation;
+  font-size: $small-label-size;
+  color: map-get($map: $gray, $key: "light4");
+  background: $white;
+  margin: -2px;
+  padding: 2px;
+}
