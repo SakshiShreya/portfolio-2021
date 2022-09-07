@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 import "./App.scss";
 import LayoutDsk from "./components/layout/LayoutDsk";
 import LayoutMob from "./components/layout/LayoutMob";
@@ -22,7 +22,11 @@ function App() {
   return (
     <DeviceContext.Provider value={dimensions}>
       <NavigationContext.Provider value={{ isOpen: isSideNavOpen, onOpen: setIsSideNavOpen }}>
-        <HashRouter>{device !== "desktop" ? <LayoutMob /> : <LayoutDsk />}</HashRouter>
+        {window.location.href.startsWith("https://sakshishreya.github.io/portfolio-2022") ? (
+          <HashRouter>{device !== "desktop" ? <LayoutMob /> : <LayoutDsk />}</HashRouter>
+        ) : (
+          <BrowserRouter>{device !== "desktop" ? <LayoutMob /> : <LayoutDsk />}</BrowserRouter>
+        )}
       </NavigationContext.Provider>
     </DeviceContext.Provider>
   );
