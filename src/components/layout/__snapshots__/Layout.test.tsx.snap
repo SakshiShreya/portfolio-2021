@@ -109,6 +109,7 @@ exports[`should render Desktop layout properly 1`] = `
           </p>
           <a
             className="btn secondary small border help"
+            data-testid="contact"
             href="#/contact"
             onClick={[Function]}
           >
@@ -263,6 +264,7 @@ exports[`should render Mobile layout properly 1`] = `
           </p>
           <a
             className="btn secondary small border help"
+            data-testid="contact"
             href="#/contact"
             onClick={[Function]}
           >

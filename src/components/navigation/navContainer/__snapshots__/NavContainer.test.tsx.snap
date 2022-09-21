@@ -106,6 +106,7 @@ exports[`should render NavContainer properly 1`] = `
         </p>
         <a
           className="btn secondary small border help"
+          data-testid="contact"
           href="#/contact"
           onClick={[Function]}
         >

@@ -20,7 +20,7 @@ exports[`should render default screen 1`] = `
           className="li h4"
         >
           <a
-            href="#/"
+            href="/"
             onClick={[Function]}
           >
             Home
@@ -30,7 +30,7 @@ exports[`should render default screen 1`] = `
           className="li h4"
         >
           <a
-            href="#/about"
+            href="/about"
             onClick={[Function]}
           >
             About Me
@@ -40,7 +40,7 @@ exports[`should render default screen 1`] = `
           className="li h4"
         >
           <a
-            href="#/experience"
+            href="/experience"
             onClick={[Function]}
           >
             Experience
@@ -50,7 +50,7 @@ exports[`should render default screen 1`] = `
           className="li h4"
         >
           <a
-            href="#/contact"
+            href="/contact"
             onClick={[Function]}
           >
             Contact me
@@ -109,7 +109,8 @@ exports[`should render default screen 1`] = `
           </p>
           <a
             className="btn secondary small border help"
-            href="#/contact"
+            data-testid="contact"
+            href="/contact"
             onClick={[Function]}
           >
             How can I help you?

@@ -48,7 +48,8 @@ exports[`Should render HomeScreen properly 1`] = `
     </p>
     <a
       className="btn secondary small border help"
-      href="#/contact"
+      data-testid="contact"
+      href="/contact"
       onClick={[Function]}
     >
       How can I help you?
